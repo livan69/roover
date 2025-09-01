@@ -1,0 +1,24 @@
+[1.095s] Invoking command in '/home/livan/ros2_ws/src/roover_serial_node': PYTHONPATH=/home/livan/ros2_ws/src/build/roover_serial_node/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/livan/ros2_ws/src/install/roover_serial_node/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/roover_serial_node build --build-base /home/livan/ros2_ws/src/build/roover_serial_node/build install --record /home/livan/ros2_ws/src/build/roover_serial_node/install.log --single-version-externally-managed install_data
+[1.426s] running egg_info
+[1.448s] writing ../build/roover_serial_node/roover_serial_node.egg-info/PKG-INFO
+[1.448s] writing dependency_links to ../build/roover_serial_node/roover_serial_node.egg-info/dependency_links.txt
+[1.449s] writing entry points to ../build/roover_serial_node/roover_serial_node.egg-info/entry_points.txt
+[1.450s] writing requirements to ../build/roover_serial_node/roover_serial_node.egg-info/requires.txt
+[1.451s] writing top-level names to ../build/roover_serial_node/roover_serial_node.egg-info/top_level.txt
+[1.499s] reading manifest file '../build/roover_serial_node/roover_serial_node.egg-info/SOURCES.txt'
+[1.500s] writing manifest file '../build/roover_serial_node/roover_serial_node.egg-info/SOURCES.txt'
+[1.501s] running build
+[1.501s] running build_py
+[1.501s] copying roover_serial_node/serial_bridge.py -> /home/livan/ros2_ws/src/build/roover_serial_node/build/lib/roover_serial_node
+[1.501s] running install
+[1.511s] running install_lib
+[1.534s] copying /home/livan/ros2_ws/src/build/roover_serial_node/build/lib/roover_serial_node/serial_bridge.py -> /home/livan/ros2_ws/src/install/roover_serial_node/lib/python3.12/site-packages/roover_serial_node
+[1.534s] byte-compiling /home/livan/ros2_ws/src/install/roover_serial_node/lib/python3.12/site-packages/roover_serial_node/serial_bridge.py to serial_bridge.cpython-312.pyc
+[1.535s] running install_data
+[1.536s] running install_egg_info
+[1.560s] removing '/home/livan/ros2_ws/src/install/roover_serial_node/lib/python3.12/site-packages/roover_serial_node-0.1.0-py3.12.egg-info' (and everything under it)
+[1.561s] Copying ../build/roover_serial_node/roover_serial_node.egg-info to /home/livan/ros2_ws/src/install/roover_serial_node/lib/python3.12/site-packages/roover_serial_node-0.1.0-py3.12.egg-info
+[1.562s] running install_scripts
+[1.726s] Installing serial_bridge script to /home/livan/ros2_ws/src/install/roover_serial_node/lib/roover_serial_node
+[1.726s] writing list of installed files to '/home/livan/ros2_ws/src/build/roover_serial_node/install.log'
+[1.802s] Invoked command in '/home/livan/ros2_ws/src/roover_serial_node' returned '0': PYTHONPATH=/home/livan/ros2_ws/src/build/roover_serial_node/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/livan/ros2_ws/src/install/roover_serial_node/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/roover_serial_node build --build-base /home/livan/ros2_ws/src/build/roover_serial_node/build install --record /home/livan/ros2_ws/src/build/roover_serial_node/install.log --single-version-externally-managed install_data

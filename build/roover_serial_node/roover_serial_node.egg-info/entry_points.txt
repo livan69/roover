@@ -1,0 +1,2 @@
+[console_scripts]
+serial_feedback_node = roover_serial_node.serial_feedback_node:main

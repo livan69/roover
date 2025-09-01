@@ -1,0 +1,6 @@
+image: mymap.png
+resolution: 0.1        # meters per pixel (hier: 1 pixel = 10 cm)
+origin: [665862.61, 5648476.40 , 0.0] # x,y positie van de linkeronderhoek in meters
+negate: 0
+occupied_thresh: 0.65
+free_thresh: 0.196

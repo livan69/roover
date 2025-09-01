@@ -1,0 +1,19 @@
+[1.501s] Invoking command in '/home/livan/ros2_ws/src/flysky_control': PYTHONPATH=/home/livan/ros2_ws/src/build/flysky_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/livan/ros2_ws/src/install/flysky_control/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/flysky_control build --build-base /home/livan/ros2_ws/src/build/flysky_control/build install --record /home/livan/ros2_ws/src/build/flysky_control/install.log --single-version-externally-managed install_data
+[1.857s] running egg_info
+[1.881s] writing ../build/flysky_control/flysky_control.egg-info/PKG-INFO
+[1.881s] writing dependency_links to ../build/flysky_control/flysky_control.egg-info/dependency_links.txt
+[1.882s] writing requirements to ../build/flysky_control/flysky_control.egg-info/requires.txt
+[1.883s] writing top-level names to ../build/flysky_control/flysky_control.egg-info/top_level.txt
+[1.933s] reading manifest file '../build/flysky_control/flysky_control.egg-info/SOURCES.txt'
+[1.934s] writing manifest file '../build/flysky_control/flysky_control.egg-info/SOURCES.txt'
+[1.934s] running build
+[1.934s] running build_py
+[1.934s] running install
+[1.944s] running install_lib
+[1.968s] running install_data
+[1.968s] running install_egg_info
+[1.995s] removing '/home/livan/ros2_ws/src/install/flysky_control/lib/python3.12/site-packages/flysky_control-0.0.0-py3.12.egg-info' (and everything under it)
+[1.995s] Copying ../build/flysky_control/flysky_control.egg-info to /home/livan/ros2_ws/src/install/flysky_control/lib/python3.12/site-packages/flysky_control-0.0.0-py3.12.egg-info
+[1.996s] running install_scripts
+[2.167s] writing list of installed files to '/home/livan/ros2_ws/src/build/flysky_control/install.log'
+[2.266s] Invoked command in '/home/livan/ros2_ws/src/flysky_control' returned '0': PYTHONPATH=/home/livan/ros2_ws/src/build/flysky_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/livan/ros2_ws/src/install/flysky_control/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/flysky_control build --build-base /home/livan/ros2_ws/src/build/flysky_control/build install --record /home/livan/ros2_ws/src/build/flysky_control/install.log --single-version-externally-managed install_data

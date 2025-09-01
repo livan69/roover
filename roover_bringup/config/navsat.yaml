@@ -1,0 +1,39 @@
+# navsat_transform_node parameters
+frequency: 10.0
+
+# Topics
+# imu0: /imu
+odom0: /odometry/filtered
+gps0: /fix
+
+# Welke velden gebruiken
+# imu0_config: [false, false, false,
+#               true,  true,  true,
+#               false, false, false,
+#               false, false, true,
+#               false, false, false]
+
+odom0_config: [true,  true,  false,
+               false, false, true,
+               true,  true,  false,
+               false, false, false,
+               false, false, false]
+
+gps0_config: [true,  true,  false,
+              false, false, false,
+              false, false, false,
+              false, false, false,
+              false, false, false]
+
+# Frames
+world_frame: map
+base_link_frame: base_link
+odom_frame: odom
+
+# Gebruik UTM conversie
+use_odometry_yaw: false
+wait_for_datum: false
+zero_altitude: true
+publish_filtered_gps: true
+broadcast_utm_transform: true
+transform_timeout: 0.0
