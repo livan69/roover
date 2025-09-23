@@ -63,16 +63,30 @@ def generate_launch_description():
                 'baudrate': 115200
             }]
         ),
+        # 7) IMU node
+        Node(
+            package='roover_imu',
+            executable='imu_node',
+            name='imu_node',
+            output='screen'
+        ),
+        # 8) Statische transform: base_link → imu_link
+        Node(
+            package='tf2_ros',
+            executable='static_transform_publisher',
+            name='static_tf_base_to_imu',
+            arguments=['0', '0', '0', '0', '0', '0', 'base_link', 'imu_link']
+        ),
         
-        # 7) localization node
+        # 9) EKF node (fuseert odom + imu)
         Node(
             package='robot_localization',
             executable='ekf_node',
             name='ekf_filter_node',
-            parameters=['/home/livan/ros2_ws/src/roover_bringup/config/ekf.yaml'],
-            output='screen'
+            output='screen',
+            parameters=['/home/livan/ros2_ws/src/roover_bringup/config/ekf.yaml']
         ),
-        # 8) transfom localization node
+        # 10) Navsat transform node (koppelt GPS aan EKF)
         Node(
             package='robot_localization',
             executable='navsat_transform_node',
@@ -80,7 +94,8 @@ def generate_launch_description():
             parameters=['/home/livan/ros2_ws/src/roover_bringup/config/navsat.yaml'],
             output='screen'
         ),
-        # 9) Map server (luchtfoto als achtergrond)
+        
+        # 11) Map server (luchtfoto als achtergrond)
         Node(
             package='nav2_map_server',
             executable='map_server',
@@ -90,7 +105,7 @@ def generate_launch_description():
                 'yaml_filename': '/home/livan/ros2_ws/src/roover_bringup/config/mymap.yaml'
             }]
         ),
-        # 10) Lifecycle manager to auto-start map_server
+        # 12) Lifecycle manager to auto-start map_server
         Node(
             package='nav2_lifecycle_manager',
             executable='lifecycle_manager',
@@ -101,5 +116,19 @@ def generate_launch_description():
                 'autostart': True,
                 'node_names': ['map_server']
             }]
-        )
+        ),
+        # # 11) Statische transform: map → odom
+        # Node(
+        #     package='tf2_ros',
+        #     executable='static_transform_publisher',
+        #     name='static_tf_map_to_odom',
+        #     arguments=['0', '0', '0', '0', '0', '0', 'map', 'odom']
+        # ),
+        # 13) Path logger node
+        Node(
+            package='roover_path',
+            executable='path_logger_node',
+            name='path_logger_node',
+            output='screen'
+        ),
     ])

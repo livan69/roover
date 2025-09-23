@@ -1,39 +1,26 @@
-# navsat_transform_node parameters
-frequency: 10.0
+navsat_transform_node:
+  ros__parameters:
+    frequency: 10.0
+    delay: 0.0
+    magnetic_declination_radians: 0.0 # pas aan als je kompas corrigeert
+    yaw_offset: 0.0
+    zero_altitude: true
+    broadcast_utm_transform: true
+    publish_filtered_gps: true
+    use_odometry_yaw: true # true
+    wait_for_datum: false
 
-# Topics
-# imu0: /imu
-odom0: /odometry/filtered
-gps0: /fix
+    use_local_cartesian: false # laat dit op false tenzij je echt lokaal projectiesysteem wilt
 
-# Welke velden gebruiken
-# imu0_config: [false, false, false,
-#               true,  true,  true,
-#               false, false, false,
-#               false, false, true,
-#               false, false, false]
+     # Input topics
+    imu0: /imu/data_raw
+    odom0: /odometry/filtered
+    gps0: /fix
 
-odom0_config: [true,  true,  false,
-               false, false, true,
-               true,  true,  false,
-               false, false, false,
-               false, false, false]
+    # Frames
+    gps_frame: gps_link
+    world_frame: map #odom 
+    base_link_frame: base_link
 
-gps0_config: [true,  true,  false,
-              false, false, false,
-              false, false, false,
-              false, false, false,
-              false, false, false]
-
-# Frames
-world_frame: map
-base_link_frame: base_link
-odom_frame: odom
-
-# Gebruik UTM conversie
-use_odometry_yaw: false
-wait_for_datum: false
-zero_altitude: true
-publish_filtered_gps: true
-broadcast_utm_transform: true
-transform_timeout: 0.0
+    #Als je odom als wereld neemt, dan overschrijf je je eigen 
+    #odometrie-frame en verlies je de koppeling naar GPS.

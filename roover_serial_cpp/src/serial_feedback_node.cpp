@@ -26,7 +26,8 @@ public:
         this->get_parameter("baudrate", baud_);
 
         // Seriële poort openen
-        fd_ = open(dev_.c_str(), O_RDWR | O_NOCTTY);
+        //fd_ = open(dev_.c_str(), O_RDWR | O_NOCTTY);
+        fd_ = open(dev_.c_str(), O_RDWR | O_NOCTTY | O_NONBLOCK);
         if (fd_ < 0) {
             RCLCPP_FATAL(this->get_logger(), "Kan seriële poort niet openen: %s",
                 dev_.c_str());
@@ -35,6 +36,9 @@ public:
         }
         RCLCPP_INFO(this->get_logger(), "Geopend serial port: %s", dev_.c_str());
 
+        // Zet terug naar blocking mode
+        fcntl(fd_, F_SETFL, 0);
+        
         // Configureer baudrate en raw mode
         struct termios tty;
         if (tcgetattr(fd_, &tty) != 0) {
@@ -53,6 +57,11 @@ public:
             rclcpp::shutdown();
             return;
         }
+
+        // Kick-byte sturen om GD32 te triggeren
+        const uint8_t kick = 0x00;
+        write(fd_, &kick, 1);
+        RCLCPP_INFO(this->get_logger(), "Kick-byte gestuurd om feedback te starten");
 
         // Maak ROS2 publisher
         publisher_ = this->create_publisher<RooverFeedback>("roover_feedback", rclcpp::QoS(10));

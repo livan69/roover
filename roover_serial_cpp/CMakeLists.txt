@@ -32,9 +32,14 @@ add_executable(serial_feedback_node
 ament_target_dependencies(serial_feedback_node
   rclcpp
 )
-rosidl_target_interfaces(serial_feedback_node
-  ${PROJECT_NAME} "rosidl_typesupport_cpp"
-)
+#rosidl_target_interfaces(serial_feedback_node
+#  ${PROJECT_NAME} "rosidl_typesupport_cpp"
+#)
+# Nieuwe manier: typesupport target ophalen en linken
+rosidl_get_typesupport_target(cpp_typesupport_target
+  ${PROJECT_NAME} "rosidl_typesupport_cpp")
+target_link_libraries(serial_feedback_node "${cpp_typesupport_target}")
+
 
 # --- Command-node ----------------------------------------------------------
 add_executable(serial_command_node
