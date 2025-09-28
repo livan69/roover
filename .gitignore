@@ -3,16 +3,38 @@ build/
 install/
 log/
 
+# State publisher dir uitsluiten
+src/roover_state_publisher/
+
 # Python cache
 __pycache__/
 *.pyc
+*.pyo
 
 # VSCode settings
 .vscode/
 *.code-workspace
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
 
 # RViz autosaves
 *.rviz~
 
 # Colcon ignore files
 COLCON_IGNORE
+
+# RViz config logs
+*.rviz2
+*.db3
+*.bag
+
+# rosbags
+rosbags/
+*.db3
+metadata.yaml
+
+#alles met flysky
+*flysky*

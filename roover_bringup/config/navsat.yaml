@@ -2,24 +2,26 @@ navsat_transform_node:
   ros__parameters:
     frequency: 10.0
     delay: 0.0
-    magnetic_declination_radians: 0.0 # pas aan als je kompas corrigeert
+    magnetic_declination_radians: 0.1 # Voor België/NL zit je rond +0.1 rad (~6°).
     yaw_offset: 0.0
     zero_altitude: true
     broadcast_utm_transform: true
     publish_filtered_gps: true
     use_odometry_yaw: true # true
     wait_for_datum: false
+    publish_tf: true
 
     use_local_cartesian: false # laat dit op false tenzij je echt lokaal projectiesysteem wilt
 
-     # Input topics
-    imu0: /imu/data_raw
-    odom0: /odometry/filtered
-    gps0: /fix
+    #  # Input topics
+    # imu0: /imu/data
+    # odom0: /odometry/filtered
+    # # gps0: /fix
+    # gps_topic: /fix
 
     # Frames
     gps_frame: gps_link
-    world_frame: map #odom 
+    world_frame: map #odom voor enkel odom en nav, map voor SLAM
     base_link_frame: base_link
 
     #Als je odom als wereld neemt, dan overschrijf je je eigen 

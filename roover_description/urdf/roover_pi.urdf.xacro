@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<robot name="roover" xmlns:xacro="http://ros.org/wiki/xacro">
+
+  <!-- Hoofdchassis -->
+  <link name="base_link"/>
+
+  <!-- Linker wiel -->
+  <link name="wheel_left"/>
+  <joint name="left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_left"/>
+    <origin xyz="-0.15 0.2775 -0.01" rpy="-1.5708 0 0"/>
+    <axis xyz="0 1 0"/> <!-- draai-as over Y -->
+  </joint>
+
+  <!-- Rechter wiel -->
+  <link name="wheel_right"/>
+  <joint name="right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="wheel_right"/>
+    <origin xyz="-0.15 -0.2775 -0.01" rpy="1.5708 0 0"/>
+    <axis xyz="0 1 0"/> <!-- draai-as over Y -->
+  </joint>
+
+  <!-- Voorblokje -->
+  <link name="front_block"/>
+  <joint name="front_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="front_block"/>
+    <origin xyz="0.35 0 0.09" rpy="0 0 0"/> <!-- positie tov base_link -->
+  </joint>
+
+  <!-- Castor wiel -->
+  <link name="castor_wheel"/>
+  <joint name="castor_joint" type="fixed"> <!-- of 'fixed' -->
+    <parent link="base_link"/>
+    <child  link="castor_wheel"/>
+    <origin xyz="0.317 0 -0.07" rpy="0 0 0"/>  <!-- pas aan -->
+  </joint>
+
+  <!-- GPS module -->
+  <link name="gps_link"/>
+  <!-- Joint: GPS vast op base_link -->
+  <joint name="gps_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="gps_link"/>
+    <origin xyz="0.25 0 0.095" rpy="0 0 0"/>
+  </joint>
+
+  <!-- IMU module -->
+  <link name="imu_link"/>
+  <!-- Joint: IMU vast op chassis -->
+  <joint name="imu_joint" type="fixed">
+    <parent link="base_link"/>
+    <child link="imu_link"/>
+    <origin xyz="0 -0.1 0.17" rpy="0 0 0"/>
+  </joint>
+</robot>
