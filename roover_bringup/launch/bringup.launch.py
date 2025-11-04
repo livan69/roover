@@ -164,4 +164,16 @@ def generate_launch_description():
             name='path_logger_node',
             output='screen'
         ),
+        
+        # 15) LiDAR node
+        Node(
+            package='roover_lidar',
+            executable='lidar_node',
+            name='lidar_node',
+            output='screen',
+            parameters=[{
+                'device': '/dev/lidar',
+                'baudrate': 230400
+            }],
+        ),
     ])
